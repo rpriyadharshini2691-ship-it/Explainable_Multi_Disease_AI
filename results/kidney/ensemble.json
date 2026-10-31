@@ -1,0 +1,33 @@
+{
+  "disease": "kidney",
+  "created_at_utc": "2026-10-31T07:32:58.682186+00:00",
+  "ensemble_type": "weighted soft voting",
+  "probability_formula": "P(y=1|x) = sum_i(weight_i * P_i(y=1|x))",
+  "positive_class": 1,
+  "base_models": [
+    "logistic_regression",
+    "random_forest",
+    "xgboost"
+  ],
+  "weights": {
+    "logistic_regression": 0.807405714510369,
+    "random_forest": 1.1411227865409934e-17,
+    "xgboost": 0.19259428548963103
+  },
+  "weight_constraints": {
+    "non_negative": true,
+    "sum_to_one": 1.0
+  },
+  "weight_selection": {
+    "method": "constrained Brier-score minimization on training OOF probabilities",
+    "cv_strategy": "StratifiedKFold(shuffle=True)",
+    "folds": 5,
+    "seed": 42,
+    "training_samples": 320,
+    "held_out_test_used": false,
+    "training_oof_brier_objective": 0.01007291376868687,
+    "objective_interpretation": "Optimization objective on the same OOF predictions used to choose weights; not an unbiased generalization estimate."
+  },
+  "saved_model": "models\\kidney\\weighted_ensemble.joblib",
+  "held_out_test_evaluation": "Not yet evaluated"
+}

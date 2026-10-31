@@ -1,0 +1,266 @@
+{
+  "disease": "heart",
+  "generated_at_utc": "2026-10-31T07:27:53.350000+00:00",
+  "shap_version": "0.54.1",
+  "selected_model": "logistic_regression",
+  "selection_criterion": "highest mean 5-fold training CV ROC-AUC; ties use lower standard deviation",
+  "selection_cv_roc_auc": {
+    "mean": 0.9024931590148981,
+    "std": 0.016144356233184404
+  },
+  "model_output_space": "raw decision-function log-odds",
+  "positive_class_label": 1,
+  "explanation_population": "reserved test partition; explanations do not tune the model",
+  "explained_test_rows": 61,
+  "background_rows_from_training_partition": 50,
+  "transformed_feature_count": 28,
+  "transformed_to_source_feature_mapping": {
+    "numeric__age": "age",
+    "numeric__trestbps": "trestbps",
+    "numeric__chol": "chol",
+    "numeric__thalach": "thalach",
+    "numeric__oldpeak": "oldpeak",
+    "categorical__sex_0.0": "sex",
+    "categorical__sex_1.0": "sex",
+    "categorical__cp_1.0": "cp",
+    "categorical__cp_2.0": "cp",
+    "categorical__cp_3.0": "cp",
+    "categorical__cp_4.0": "cp",
+    "categorical__fbs_0.0": "fbs",
+    "categorical__fbs_1.0": "fbs",
+    "categorical__restecg_0.0": "restecg",
+    "categorical__restecg_1.0": "restecg",
+    "categorical__restecg_2.0": "restecg",
+    "categorical__exang_0.0": "exang",
+    "categorical__exang_1.0": "exang",
+    "categorical__slope_1.0": "slope",
+    "categorical__slope_2.0": "slope",
+    "categorical__slope_3.0": "slope",
+    "categorical__ca_0.0": "ca",
+    "categorical__ca_1.0": "ca",
+    "categorical__ca_2.0": "ca",
+    "categorical__ca_3.0": "ca",
+    "categorical__thal_3.0": "thal",
+    "categorical__thal_6.0": "thal",
+    "categorical__thal_7.0": "thal"
+  },
+  "local_example": {
+    "cleaned_dataset_row_index": 219,
+    "base_value": 0.17068353878022496,
+    "model_output": -1.329176170133694,
+    "base_plus_shap_sum": -1.329176170133694,
+    "absolute_additivity_error": 0.0,
+    "raw_feature_values": {
+      "age": "59.0",
+      "sex": "1.0",
+      "cp": "4.0",
+      "trestbps": "138.0",
+      "chol": "271.0",
+      "fbs": "0.0",
+      "restecg": "2.0",
+      "thalach": "182.0",
+      "exang": "0.0",
+      "oldpeak": "0.0",
+      "slope": "1.0",
+      "ca": "0.0",
+      "thal": "3.0"
+    },
+    "top_contributions": [
+      {
+        "transformed_feature": "categorical__ca_0.0",
+        "source_feature": "ca",
+        "original_feature_name": "ca",
+        "transformed_value": 1.0,
+        "shap_value": -0.7193475731142748,
+        "direction": "decreases model output",
+        "absolute_shap": 0.7193475731142748
+      },
+      {
+        "transformed_feature": "categorical__cp_4.0",
+        "source_feature": "cp",
+        "original_feature_name": "cp",
+        "transformed_value": 1.0,
+        "shap_value": 0.5152803069279758,
+        "direction": "increases model output",
+        "absolute_shap": 0.5152803069279758
+      },
+      {
+        "transformed_feature": "numeric__thalach",
+        "source_feature": "thalach",
+        "original_feature_name": "thalach",
+        "transformed_value": 1.415099769078429,
+        "shap_value": -0.5103525020360118,
+        "direction": "decreases model output",
+        "absolute_shap": 0.5103525020360118
+      },
+      {
+        "transformed_feature": "categorical__slope_2.0",
+        "source_feature": "slope",
+        "original_feature_name": "slope",
+        "transformed_value": 0.0,
+        "shap_value": -0.31378225599293064,
+        "direction": "decreases model output",
+        "absolute_shap": 0.31378225599293064
+      },
+      {
+        "transformed_feature": "categorical__thal_7.0",
+        "source_feature": "thal",
+        "original_feature_name": "thal",
+        "transformed_value": 0.0,
+        "shap_value": -0.31102647110010667,
+        "direction": "decreases model output",
+        "absolute_shap": 0.31102647110010667
+      },
+      {
+        "transformed_feature": "categorical__slope_1.0",
+        "source_feature": "slope",
+        "original_feature_name": "slope",
+        "transformed_value": 1.0,
+        "shap_value": -0.2467580636890886,
+        "direction": "decreases model output",
+        "absolute_shap": 0.2467580636890886
+      },
+      {
+        "transformed_feature": "categorical__thal_3.0",
+        "source_feature": "thal",
+        "original_feature_name": "thal",
+        "transformed_value": 1.0,
+        "shap_value": -0.21609715803371046,
+        "direction": "decreases model output",
+        "absolute_shap": 0.21609715803371046
+      },
+      {
+        "transformed_feature": "numeric__oldpeak",
+        "source_feature": "oldpeak",
+        "original_feature_name": "oldpeak",
+        "transformed_value": -0.8916273498556132,
+        "shap_value": -0.20704265889886028,
+        "direction": "decreases model output",
+        "absolute_shap": 0.20704265889886028
+      },
+      {
+        "transformed_feature": "categorical__sex_0.0",
+        "source_feature": "sex",
+        "original_feature_name": "sex",
+        "transformed_value": 0.0,
+        "shap_value": 0.18221733163136444,
+        "direction": "increases model output",
+        "absolute_shap": 0.18221733163136444
+      },
+      {
+        "transformed_feature": "numeric__trestbps",
+        "source_feature": "trestbps",
+        "original_feature_name": "trestbps",
+        "transformed_value": 0.4003912806904277,
+        "shap_value": 0.18125868778634513,
+        "direction": "increases model output",
+        "absolute_shap": 0.18125868778634513
+      },
+      {
+        "transformed_feature": "categorical__sex_1.0",
+        "source_feature": "sex",
+        "original_feature_name": "sex",
+        "transformed_value": 1.0,
+        "shap_value": 0.17949180531794978,
+        "direction": "increases model output",
+        "absolute_shap": 0.17949180531794978
+      },
+      {
+        "transformed_feature": "categorical__cp_3.0",
+        "source_feature": "cp",
+        "original_feature_name": "cp",
+        "transformed_value": 0.0,
+        "shap_value": 0.13794380056569697,
+        "direction": "increases model output",
+        "absolute_shap": 0.13794380056569697
+      },
+      {
+        "transformed_feature": "categorical__ca_1.0",
+        "source_feature": "ca",
+        "original_feature_name": "ca",
+        "transformed_value": 0.0,
+        "shap_value": -0.09849118881727115,
+        "direction": "decreases model output",
+        "absolute_shap": 0.09849118881727115
+      },
+      {
+        "transformed_feature": "categorical__exang_0.0",
+        "source_feature": "exang",
+        "original_feature_name": "exang",
+        "transformed_value": 1.0,
+        "shap_value": -0.09724132517944946,
+        "direction": "decreases model output",
+        "absolute_shap": 0.09724132517944946
+      },
+      {
+        "transformed_feature": "categorical__exang_1.0",
+        "source_feature": "exang",
+        "original_feature_name": "exang",
+        "transformed_value": 0.0,
+        "shap_value": -0.09346751951472157,
+        "direction": "decreases model output",
+        "absolute_shap": 0.09346751951472157
+      }
+    ]
+  },
+  "global_importance": [
+    {
+      "feature": "ca",
+      "mean_absolute_shap": 1.1163143613706468
+    },
+    {
+      "feature": "cp",
+      "mean_absolute_shap": 0.8765073526769408
+    },
+    {
+      "feature": "thal",
+      "mean_absolute_shap": 0.6869197080919147
+    },
+    {
+      "feature": "sex",
+      "mean_absolute_shap": 0.5806503547748765
+    },
+    {
+      "feature": "slope",
+      "mean_absolute_shap": 0.5383276659498822
+    },
+    {
+      "feature": "thalach",
+      "mean_absolute_shap": 0.3158261580757677
+    },
+    {
+      "feature": "oldpeak",
+      "mean_absolute_shap": 0.25624632742361975
+    },
+    {
+      "feature": "trestbps",
+      "mean_absolute_shap": 0.2479767167641689
+    },
+    {
+      "feature": "exang",
+      "mean_absolute_shap": 0.23934133696590865
+    },
+    {
+      "feature": "restecg",
+      "mean_absolute_shap": 0.1866164838144901
+    },
+    {
+      "feature": "chol",
+      "mean_absolute_shap": 0.14040882082788764
+    },
+    {
+      "feature": "fbs",
+      "mean_absolute_shap": 0.05853885584414516
+    },
+    {
+      "feature": "age",
+      "mean_absolute_shap": 0.050401789394918295
+    }
+  ],
+  "plots": {
+    "summary_beeswarm": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\heart\\shap\\shap_summary_beeswarm.png",
+    "global_importance": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\heart\\shap\\shap_global_importance.png",
+    "local_waterfall": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\heart\\shap\\shap_local_waterfall.png"
+  },
+  "interpretation_limitations": "SHAP values describe this fitted model's behavior in the stated output space. They do not establish medical causation, clinical correctness, fairness, or clinical validity."
+}

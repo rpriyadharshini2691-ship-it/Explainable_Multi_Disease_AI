@@ -1,0 +1,33 @@
+disease,model,metric,mean,std,status
+kidney,logistic_regression,accuracy,0.990625,0.00855816496101822,training-only stratified CV
+kidney,logistic_regression,precision,0.9902439024390244,0.013359086768418698,training-only stratified CV
+kidney,logistic_regression,recall_sensitivity,0.9949999999999999,0.011180339887498959,training-only stratified CV
+kidney,logistic_regression,specificity,0.9833333333333334,0.022821773229381902,training-only stratified CV
+kidney,logistic_regression,f1,0.9925300828254414,0.006820263921439736,training-only stratified CV
+kidney,logistic_regression,roc_auc,1.0,0.0,training-only stratified CV
+kidney,logistic_regression,average_precision,1.0,0.0,training-only stratified CV
+kidney,logistic_regression,brier_score,0.010369259186736715,0.007122458634906919,training-only stratified CV
+kidney,random_forest,accuracy,0.9875,0.01307281291459493,training-only stratified CV
+kidney,random_forest,precision,0.9855981416957027,0.021362292015841274,training-only stratified CV
+kidney,random_forest,recall_sensitivity,0.9949999999999999,0.011180339887498959,training-only stratified CV
+kidney,random_forest,specificity,0.975,0.03726779962499651,training-only stratified CV
+kidney,random_forest,f1,0.9901211698474228,0.010241753929789588,training-only stratified CV
+kidney,random_forest,roc_auc,0.9991666666666668,0.0013581671677505213,training-only stratified CV
+kidney,random_forest,average_precision,0.9995028924327706,0.0008146747759602059,training-only stratified CV
+kidney,random_forest,brier_score,0.014600257228997628,0.00527767348254462,training-only stratified CV
+kidney,xgboost,accuracy,0.978125,0.02096313728906053,training-only stratified CV
+kidney,xgboost,precision,0.9803479853479853,0.020118570355854497,training-only stratified CV
+kidney,xgboost,recall_sensitivity,0.985,0.022360679774997918,training-only stratified CV
+kidney,xgboost,specificity,0.9666666666666668,0.034860834438919824,training-only stratified CV
+kidney,xgboost,f1,0.9825270145106515,0.0168481043322057,training-only stratified CV
+kidney,xgboost,roc_auc,0.9977083333333334,0.0022582795196540158,training-only stratified CV
+kidney,xgboost,average_precision,0.9986822029596422,0.0012775356235958427,training-only stratified CV
+kidney,xgboost,brier_score,0.015281202783808113,0.012350835575832463,training-only stratified CV
+kidney,weighted_soft_voting,accuracy,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.
+kidney,weighted_soft_voting,precision,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.
+kidney,weighted_soft_voting,recall_sensitivity,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.
+kidney,weighted_soft_voting,specificity,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.
+kidney,weighted_soft_voting,f1,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.
+kidney,weighted_soft_voting,roc_auc,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.
+kidney,weighted_soft_voting,average_precision,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.
+kidney,weighted_soft_voting,brier_score,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.

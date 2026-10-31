@@ -1,0 +1,341 @@
+{
+  "disease": "kidney",
+  "generated_at_utc": "2026-10-31T07:35:00.090528+00:00",
+  "shap_version": "0.54.1",
+  "selected_model": "logistic_regression",
+  "selection_criterion": "highest mean 5-fold training CV ROC-AUC; ties use lower standard deviation",
+  "selection_cv_roc_auc": {
+    "mean": 1.0,
+    "std": 0.0
+  },
+  "model_output_space": "raw decision-function log-odds",
+  "positive_class_label": 1,
+  "explanation_population": "reserved test partition; explanations do not tune the model",
+  "explained_test_rows": 80,
+  "background_rows_from_training_partition": 50,
+  "transformed_feature_count": 48,
+  "transformed_to_source_feature_mapping": {
+    "numeric__age": "age",
+    "numeric__bp": "bp",
+    "numeric__bgr": "bgr",
+    "numeric__bu": "bu",
+    "numeric__sc": "sc",
+    "numeric__sod": "sod",
+    "numeric__pot": "pot",
+    "numeric__hemo": "hemo",
+    "numeric__pcv": "pcv",
+    "numeric__wbcc": "wbcc",
+    "numeric__rbcc": "rbcc",
+    "categorical__sg_1.005": "sg",
+    "categorical__sg_1.01": "sg",
+    "categorical__sg_1.015": "sg",
+    "categorical__sg_1.02": "sg",
+    "categorical__sg_1.025": "sg",
+    "categorical__al_0.0": "al",
+    "categorical__al_1.0": "al",
+    "categorical__al_2.0": "al",
+    "categorical__al_3.0": "al",
+    "categorical__al_4.0": "al",
+    "categorical__al_5.0": "al",
+    "categorical__su_0.0": "su",
+    "categorical__su_1.0": "su",
+    "categorical__su_2.0": "su",
+    "categorical__su_3.0": "su",
+    "categorical__su_4.0": "su",
+    "categorical__su_5.0": "su",
+    "categorical__rbc_abnormal": "rbc",
+    "categorical__rbc_normal": "rbc",
+    "categorical__pc_abnormal": "pc",
+    "categorical__pc_normal": "pc",
+    "categorical__pcc_notpresent": "pcc",
+    "categorical__pcc_present": "pcc",
+    "categorical__ba_notpresent": "ba",
+    "categorical__ba_present": "ba",
+    "categorical__htn_no": "htn",
+    "categorical__htn_yes": "htn",
+    "categorical__dm_no": "dm",
+    "categorical__dm_yes": "dm",
+    "categorical__cad_no": "cad",
+    "categorical__cad_yes": "cad",
+    "categorical__appet_good": "appet",
+    "categorical__appet_poor": "appet",
+    "categorical__pe_no": "pe",
+    "categorical__pe_yes": "pe",
+    "categorical__ane_no": "ane",
+    "categorical__ane_yes": "ane"
+  },
+  "local_example": {
+    "cleaned_dataset_row_index": 342,
+    "base_value": 2.1113524970257034,
+    "model_output": -5.678742727475738,
+    "base_plus_shap_sum": -5.678742727475739,
+    "absolute_additivity_error": 8.881784197001252e-16,
+    "raw_feature_values": {
+      "age": "44.0",
+      "bp": "60.0",
+      "sg": "1.02",
+      "al": "0.0",
+      "su": "0.0",
+      "rbc": "normal",
+      "pc": "normal",
+      "pcc": "notpresent",
+      "ba": "notpresent",
+      "bgr": "95.0",
+      "bu": "46.0",
+      "sc": "0.5",
+      "sod": "138.0",
+      "pot": "4.2",
+      "hemo": "15.0",
+      "pcv": "50.0",
+      "wbcc": "7700.0",
+      "rbcc": "6.3",
+      "htn": "no",
+      "dm": "no",
+      "cad": "no",
+      "appet": "good",
+      "pe": "no",
+      "ane": "no"
+    },
+    "top_contributions": [
+      {
+        "transformed_feature": "numeric__pcv",
+        "source_feature": "pcv",
+        "original_feature_name": "pcv",
+        "transformed_value": 1.362113582487795,
+        "shap_value": -1.6098642615112868,
+        "direction": "decreases model output",
+        "absolute_shap": 1.6098642615112868
+      },
+      {
+        "transformed_feature": "numeric__rbcc",
+        "source_feature": "rbcc",
+        "original_feature_name": "rbcc",
+        "transformed_value": 1.8623727290894767,
+        "shap_value": -1.417215441252241,
+        "direction": "decreases model output",
+        "absolute_shap": 1.417215441252241
+      },
+      {
+        "transformed_feature": "numeric__hemo",
+        "source_feature": "hemo",
+        "original_feature_name": "hemo",
+        "transformed_value": 0.8947552401065364,
+        "shap_value": -1.3870324302383974,
+        "direction": "decreases model output",
+        "absolute_shap": 1.3870324302383974
+      },
+      {
+        "transformed_feature": "numeric__bgr",
+        "source_feature": "bgr",
+        "original_feature_name": "bgr",
+        "transformed_value": -0.6590223701147954,
+        "shap_value": -0.5823571417731052,
+        "direction": "decreases model output",
+        "absolute_shap": 0.5823571417731052
+      },
+      {
+        "transformed_feature": "numeric__sc",
+        "source_feature": "sc",
+        "original_feature_name": "sc",
+        "transformed_value": -0.4322470606593365,
+        "shap_value": -0.45953737560218827,
+        "direction": "decreases model output",
+        "absolute_shap": 0.45953737560218827
+      },
+      {
+        "transformed_feature": "numeric__bp",
+        "source_feature": "bp",
+        "original_feature_name": "bp",
+        "transformed_value": -1.2116031856596465,
+        "shap_value": -0.35459399629473204,
+        "direction": "decreases model output",
+        "absolute_shap": 0.35459399629473204
+      },
+      {
+        "transformed_feature": "categorical__sg_1.02",
+        "source_feature": "sg",
+        "original_feature_name": "sg",
+        "transformed_value": 1.0,
+        "shap_value": -0.35393466897538645,
+        "direction": "decreases model output",
+        "absolute_shap": 0.35393466897538645
+      },
+      {
+        "transformed_feature": "categorical__sg_1.025",
+        "source_feature": "sg",
+        "original_feature_name": "sg",
+        "transformed_value": 0.0,
+        "shap_value": 0.311660714830876,
+        "direction": "increases model output",
+        "absolute_shap": 0.311660714830876
+      },
+      {
+        "transformed_feature": "categorical__al_0.0",
+        "source_feature": "al",
+        "original_feature_name": "al",
+        "transformed_value": 1.0,
+        "shap_value": -0.2972111103339199,
+        "direction": "decreases model output",
+        "absolute_shap": 0.2972111103339199
+      },
+      {
+        "transformed_feature": "categorical__htn_no",
+        "source_feature": "htn",
+        "original_feature_name": "htn",
+        "transformed_value": 1.0,
+        "shap_value": -0.2384626069183713,
+        "direction": "decreases model output",
+        "absolute_shap": 0.2384626069183713
+      },
+      {
+        "transformed_feature": "categorical__htn_yes",
+        "source_feature": "htn",
+        "original_feature_name": "htn",
+        "transformed_value": 0.0,
+        "shap_value": -0.23830821825038156,
+        "direction": "decreases model output",
+        "absolute_shap": 0.23830821825038156
+      },
+      {
+        "transformed_feature": "categorical__dm_no",
+        "source_feature": "dm",
+        "original_feature_name": "dm",
+        "transformed_value": 1.0,
+        "shap_value": -0.1799675154318925,
+        "direction": "decreases model output",
+        "absolute_shap": 0.1799675154318925
+      },
+      {
+        "transformed_feature": "categorical__dm_yes",
+        "source_feature": "dm",
+        "original_feature_name": "dm",
+        "transformed_value": 0.0,
+        "shap_value": -0.17985723781189986,
+        "direction": "decreases model output",
+        "absolute_shap": 0.17985723781189986
+      },
+      {
+        "transformed_feature": "categorical__appet_good",
+        "source_feature": "appet",
+        "original_feature_name": "appet",
+        "transformed_value": 1.0,
+        "shap_value": -0.1256438536425325,
+        "direction": "decreases model output",
+        "absolute_shap": 0.1256438536425325
+      },
+      {
+        "transformed_feature": "categorical__appet_poor",
+        "source_feature": "appet",
+        "original_feature_name": "appet",
+        "transformed_value": 0.0,
+        "shap_value": -0.12554460378453908,
+        "direction": "decreases model output",
+        "absolute_shap": 0.12554460378453908
+      }
+    ]
+  },
+  "global_importance": [
+    {
+      "feature": "sg",
+      "mean_absolute_shap": 1.4479534951362243
+    },
+    {
+      "feature": "hemo",
+      "mean_absolute_shap": 1.2853466577162949
+    },
+    {
+      "feature": "pcv",
+      "mean_absolute_shap": 1.1128913026498408
+    },
+    {
+      "feature": "dm",
+      "mean_absolute_shap": 0.83209474187627
+    },
+    {
+      "feature": "bgr",
+      "mean_absolute_shap": 0.8124000226298944
+    },
+    {
+      "feature": "htn",
+      "mean_absolute_shap": 0.7577250614289108
+    },
+    {
+      "feature": "al",
+      "mean_absolute_shap": 0.7115189699370966
+    },
+    {
+      "feature": "rbcc",
+      "mean_absolute_shap": 0.5388191905354759
+    },
+    {
+      "feature": "appet",
+      "mean_absolute_shap": 0.4744670862511352
+    },
+    {
+      "feature": "sc",
+      "mean_absolute_shap": 0.42429939229752245
+    },
+    {
+      "feature": "bp",
+      "mean_absolute_shap": 0.31074464943149965
+    },
+    {
+      "feature": "pot",
+      "mean_absolute_shap": 0.24770929499430486
+    },
+    {
+      "feature": "bu",
+      "mean_absolute_shap": 0.24693285564593714
+    },
+    {
+      "feature": "pe",
+      "mean_absolute_shap": 0.21036003238401815
+    },
+    {
+      "feature": "su",
+      "mean_absolute_shap": 0.19886244568953257
+    },
+    {
+      "feature": "sod",
+      "mean_absolute_shap": 0.18069141587658882
+    },
+    {
+      "feature": "age",
+      "mean_absolute_shap": 0.17642440662154887
+    },
+    {
+      "feature": "pc",
+      "mean_absolute_shap": 0.11887347066670455
+    },
+    {
+      "feature": "rbc",
+      "mean_absolute_shap": 0.11791398941803641
+    },
+    {
+      "feature": "ane",
+      "mean_absolute_shap": 0.0730222035258317
+    },
+    {
+      "feature": "pcc",
+      "mean_absolute_shap": 0.02519562680393783
+    },
+    {
+      "feature": "ba",
+      "mean_absolute_shap": 0.00738994078764319
+    },
+    {
+      "feature": "wbcc",
+      "mean_absolute_shap": 0.0032688172159765017
+    },
+    {
+      "feature": "cad",
+      "mean_absolute_shap": 0.0007318498090894109
+    }
+  ],
+  "plots": {
+    "summary_beeswarm": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\kidney\\shap\\shap_summary_beeswarm.png",
+    "global_importance": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\kidney\\shap\\shap_global_importance.png",
+    "local_waterfall": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\kidney\\shap\\shap_local_waterfall.png"
+  },
+  "interpretation_limitations": "SHAP values describe this fitted model's behavior in the stated output space. They do not establish medical causation, clinical correctness, fairness, or clinical validity."
+}

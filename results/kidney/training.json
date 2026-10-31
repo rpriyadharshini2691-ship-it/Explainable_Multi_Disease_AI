@@ -1,0 +1,407 @@
+{
+  "dataset": "kidney",
+  "trained_at_utc": "2026-10-31T07:32:16.091054+00:00",
+  "seed": 42,
+  "training_samples": 320,
+  "test_samples_reserved": 80,
+  "feature_count_before_encoding": 24,
+  "training_class_distribution": {
+    "1": 200,
+    "0": 120
+  },
+  "test_class_distribution_reserved": {
+    "0": 30,
+    "1": 50
+  },
+  "cleaning_report": {
+    "source_path": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\datasets\\kidney.csv",
+    "source_shape": [
+      400,
+      25
+    ],
+    "cleaned_shape": [
+      400,
+      25
+    ],
+    "target_column": "target",
+    "target_labels": {
+      "1": 250,
+      "0": 150
+    },
+    "duplicate_rows_removed": 0,
+    "missing_target_rows_removed": 0,
+    "feature_missing_value_counts": {
+      "age": 9,
+      "bp": 12,
+      "sg": 47,
+      "al": 46,
+      "su": 49,
+      "rbc": 152,
+      "pc": 65,
+      "pcc": 4,
+      "ba": 4,
+      "bgr": 44,
+      "bu": 19,
+      "sc": 17,
+      "sod": 87,
+      "pot": 88,
+      "hemo": 52,
+      "pcv": 71,
+      "wbcc": 106,
+      "rbcc": 131,
+      "htn": 2,
+      "dm": 2,
+      "cad": 2,
+      "appet": 1,
+      "pe": 1,
+      "ane": 1
+    }
+  },
+  "cross_validation": {
+    "folds": 5,
+    "stratified": true,
+    "shuffle": true,
+    "seed": 42,
+    "preprocessing_refit_inside_each_fold": true
+  },
+  "software_versions": {
+    "scikit_learn": "1.9.1",
+    "xgboost": "3.4.1"
+  },
+  "models": {
+    "logistic_regression": {
+      "saved_model": "models\\kidney\\logistic_regression.joblib",
+      "model_parameters": {
+        "C": 1.0,
+        "max_iter": 2000,
+        "n_jobs": null,
+        "random_state": 42,
+        "solver": "lbfgs"
+      },
+      "classes": [
+        0,
+        1
+      ],
+      "cross_validation": {
+        "folds": 5,
+        "strategy": "StratifiedKFold(shuffle=True)",
+        "scoring_partition": "training split only",
+        "metrics": {
+          "accuracy": {
+            "mean": 0.990625,
+            "std": 0.00855816496101822,
+            "fold_scores": [
+              1.0,
+              0.984375,
+              0.984375,
+              0.984375,
+              1.0
+            ]
+          },
+          "precision": {
+            "mean": 0.9902439024390244,
+            "std": 0.013359086768418698,
+            "fold_scores": [
+              1.0,
+              0.975609756097561,
+              0.975609756097561,
+              1.0,
+              1.0
+            ]
+          },
+          "recall_sensitivity": {
+            "mean": 0.9949999999999999,
+            "std": 0.011180339887498959,
+            "fold_scores": [
+              1.0,
+              1.0,
+              1.0,
+              0.975,
+              1.0
+            ]
+          },
+          "specificity": {
+            "mean": 0.9833333333333334,
+            "std": 0.022821773229381902,
+            "fold_scores": [
+              1.0,
+              0.9583333333333334,
+              0.9583333333333334,
+              1.0,
+              1.0
+            ]
+          },
+          "f1": {
+            "mean": 0.9925300828254414,
+            "std": 0.006820263921439736,
+            "fold_scores": [
+              1.0,
+              0.9876543209876543,
+              0.9876543209876543,
+              0.9873417721518988,
+              1.0
+            ]
+          },
+          "roc_auc": {
+            "mean": 1.0,
+            "std": 0.0,
+            "fold_scores": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "average_precision": {
+            "mean": 1.0,
+            "std": 0.0,
+            "fold_scores": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "brier_score": {
+            "mean": 0.010369259186736715,
+            "std": 0.007122458634906919,
+            "fold_scores": [
+              0.003167685319620631,
+              0.00998714546253566,
+              0.018656707666854032,
+              0.01641970445090485,
+              0.003615053033768402
+            ]
+          }
+        }
+      }
+    },
+    "random_forest": {
+      "saved_model": "models\\kidney\\random_forest.joblib",
+      "model_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 2,
+        "n_estimators": 300,
+        "n_jobs": 1,
+        "random_state": 42
+      },
+      "classes": [
+        0,
+        1
+      ],
+      "cross_validation": {
+        "folds": 5,
+        "strategy": "StratifiedKFold(shuffle=True)",
+        "scoring_partition": "training split only",
+        "metrics": {
+          "accuracy": {
+            "mean": 0.9875,
+            "std": 0.01307281291459493,
+            "fold_scores": [
+              1.0,
+              0.984375,
+              0.96875,
+              0.984375,
+              1.0
+            ]
+          },
+          "precision": {
+            "mean": 0.9855981416957027,
+            "std": 0.021362292015841274,
+            "fold_scores": [
+              1.0,
+              0.975609756097561,
+              0.9523809523809523,
+              1.0,
+              1.0
+            ]
+          },
+          "recall_sensitivity": {
+            "mean": 0.9949999999999999,
+            "std": 0.011180339887498959,
+            "fold_scores": [
+              1.0,
+              1.0,
+              1.0,
+              0.975,
+              1.0
+            ]
+          },
+          "specificity": {
+            "mean": 0.975,
+            "std": 0.03726779962499651,
+            "fold_scores": [
+              1.0,
+              0.9583333333333334,
+              0.9166666666666666,
+              1.0,
+              1.0
+            ]
+          },
+          "f1": {
+            "mean": 0.9901211698474228,
+            "std": 0.010241753929789588,
+            "fold_scores": [
+              1.0,
+              0.9876543209876543,
+              0.975609756097561,
+              0.9873417721518988,
+              1.0
+            ]
+          },
+          "roc_auc": {
+            "mean": 0.9991666666666668,
+            "std": 0.0013581671677505213,
+            "fold_scores": [
+              1.0,
+              0.9968750000000001,
+              0.9989583333333334,
+              1.0,
+              1.0
+            ]
+          },
+          "average_precision": {
+            "mean": 0.9995028924327706,
+            "std": 0.0008146747759602059,
+            "fold_scores": [
+              1.0,
+              0.9981242182614135,
+              0.9993902439024389,
+              1.0,
+              1.0
+            ]
+          },
+          "brier_score": {
+            "mean": 0.014600257228997628,
+            "std": 0.00527767348254462,
+            "fold_scores": [
+              0.011165309298983083,
+              0.019487869644337852,
+              0.018524842901854185,
+              0.01670057487317504,
+              0.007122689426637986
+            ]
+          }
+        }
+      }
+    },
+    "xgboost": {
+      "saved_model": "models\\kidney\\xgboost.joblib",
+      "model_parameters": {
+        "objective": "binary:logistic",
+        "colsample_bytree": 0.9,
+        "eval_metric": "logloss",
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "n_estimators": 200,
+        "n_jobs": 1,
+        "random_state": 42,
+        "reg_lambda": 1.0,
+        "subsample": 0.9,
+        "tree_method": "hist"
+      },
+      "classes": [
+        0,
+        1
+      ],
+      "cross_validation": {
+        "folds": 5,
+        "strategy": "StratifiedKFold(shuffle=True)",
+        "scoring_partition": "training split only",
+        "metrics": {
+          "accuracy": {
+            "mean": 0.978125,
+            "std": 0.02096313728906053,
+            "fold_scores": [
+              1.0,
+              0.96875,
+              0.96875,
+              0.953125,
+              1.0
+            ]
+          },
+          "precision": {
+            "mean": 0.9803479853479853,
+            "std": 0.020118570355854497,
+            "fold_scores": [
+              1.0,
+              0.975,
+              0.9523809523809523,
+              0.9743589743589743,
+              1.0
+            ]
+          },
+          "recall_sensitivity": {
+            "mean": 0.985,
+            "std": 0.022360679774997918,
+            "fold_scores": [
+              1.0,
+              0.975,
+              1.0,
+              0.95,
+              1.0
+            ]
+          },
+          "specificity": {
+            "mean": 0.9666666666666668,
+            "std": 0.034860834438919824,
+            "fold_scores": [
+              1.0,
+              0.9583333333333334,
+              0.9166666666666666,
+              0.9583333333333334,
+              1.0
+            ]
+          },
+          "f1": {
+            "mean": 0.9825270145106515,
+            "std": 0.0168481043322057,
+            "fold_scores": [
+              1.0,
+              0.975,
+              0.975609756097561,
+              0.9620253164556962,
+              1.0
+            ]
+          },
+          "roc_auc": {
+            "mean": 0.9977083333333334,
+            "std": 0.0022582795196540158,
+            "fold_scores": [
+              1.0,
+              0.9968750000000001,
+              0.996875,
+              0.9947916666666667,
+              1.0
+            ]
+          },
+          "average_precision": {
+            "mean": 0.9986822029596422,
+            "std": 0.0012775356235958427,
+            "fold_scores": [
+              1.0,
+              0.9981242182614136,
+              0.9981845238095239,
+              0.9971022727272729,
+              1.0
+            ]
+          },
+          "brier_score": {
+            "mean": 0.015281202783808113,
+            "std": 0.012350835575832463,
+            "fold_scores": [
+              0.0018288497813045979,
+              0.023297905921936035,
+              0.02256259135901928,
+              0.026812594383955002,
+              0.0019040724728256464
+            ]
+          }
+        }
+      }
+    }
+  },
+  "test_evaluation": "Not yet evaluated"
+}

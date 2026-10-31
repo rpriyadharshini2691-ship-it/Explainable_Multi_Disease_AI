@@ -1,0 +1,12 @@
+numpy>=1.26,<3
+pandas>=2.2,<4
+scikit-learn>=1.5,<2
+xgboost>=2.1,<4
+shap>=0.46,<1
+matplotlib>=3.9,<4
+seaborn>=0.13,<1
+scipy>=1.13,<2
+streamlit>=1.50,<2
+joblib>=1.4,<2
+ucimlrepo>=0.0.7,<1
+pytest>=8.3,<10

@@ -1,0 +1,363 @@
+{
+  "disease": "kidney",
+  "generated_at_utc": "2026-10-31T07:41:06.023438+00:00",
+  "selected_model": "logistic_regression",
+  "model_output_space": "raw decision-function log-odds",
+  "selection_criterion": "highest mean 5-fold training CV ROC-AUC; ties use lower standard deviation",
+  "test_records_used": 80,
+  "numerical_features_perturbed": [
+    "age",
+    "bp",
+    "bgr",
+    "bu",
+    "sc",
+    "sod",
+    "pot",
+    "hemo",
+    "pcv",
+    "wbcc",
+    "rbcc"
+  ],
+  "perturbation_experiment": {
+    "method": "independent Gaussian noise applied to numeric source fields; categorical values unchanged",
+    "magnitude_unit": "multiples of the training-partition standard deviation",
+    "magnitudes": [
+      0.05,
+      0.1
+    ],
+    "repetitions_per_magnitude": 10,
+    "records_per_repetition": 30,
+    "random_seed": 42,
+    "clipping": "perturbed numeric values clipped to each feature's observed training min/max; missing values stay missing",
+    "ranking_unit": "original source features, summing absolute SHAP values across one-hot columns per row",
+    "top_k": 5,
+    "stability_by_magnitude": {
+      "0.05": {
+        "magnitude_in_training_standard_deviations": 0.05,
+        "comparisons": 300,
+        "spearman_rank_correlation_mean": 0.9915652173913042,
+        "spearman_rank_correlation_std": 0.012513088152783578,
+        "top5_jaccard_mean": 0.9233333333333333,
+        "top5_jaccard_std": 0.14051188470584883,
+        "per_repetition_means": [
+          {
+            "repetition": 0,
+            "spearman_rank_correlation_mean": 0.9926376811594203,
+            "top5_jaccard_mean": 0.888888888888889
+          },
+          {
+            "repetition": 1,
+            "spearman_rank_correlation_mean": 0.9914492753623189,
+            "top5_jaccard_mean": 0.9444444444444445
+          },
+          {
+            "repetition": 2,
+            "spearman_rank_correlation_mean": 0.9915362318840578,
+            "top5_jaccard_mean": 0.9111111111111111
+          },
+          {
+            "repetition": 3,
+            "spearman_rank_correlation_mean": 0.992927536231884,
+            "top5_jaccard_mean": 0.9333333333333333
+          },
+          {
+            "repetition": 4,
+            "spearman_rank_correlation_mean": 0.9922028985507246,
+            "top5_jaccard_mean": 0.9222222222222223
+          },
+          {
+            "repetition": 5,
+            "spearman_rank_correlation_mean": 0.9917391304347823,
+            "top5_jaccard_mean": 0.9222222222222223
+          },
+          {
+            "repetition": 6,
+            "spearman_rank_correlation_mean": 0.99,
+            "top5_jaccard_mean": 0.9222222222222223
+          },
+          {
+            "repetition": 7,
+            "spearman_rank_correlation_mean": 0.9908115942028984,
+            "top5_jaccard_mean": 0.9444444444444445
+          },
+          {
+            "repetition": 8,
+            "spearman_rank_correlation_mean": 0.9919420289855071,
+            "top5_jaccard_mean": 0.9444444444444445
+          },
+          {
+            "repetition": 9,
+            "spearman_rank_correlation_mean": 0.9904057971014492,
+            "top5_jaccard_mean": 0.9000000000000001
+          }
+        ]
+      },
+      "0.1": {
+        "magnitude_in_training_standard_deviations": 0.1,
+        "comparisons": 300,
+        "spearman_rank_correlation_mean": 0.9841246376811593,
+        "spearman_rank_correlation_std": 0.01594488524300311,
+        "top5_jaccard_mean": 0.8787301587301588,
+        "top5_jaccard_std": 0.1648272133890528,
+        "per_repetition_means": [
+          {
+            "repetition": 0,
+            "spearman_rank_correlation_mean": 0.9846956521739129,
+            "top5_jaccard_mean": 0.8698412698412699
+          },
+          {
+            "repetition": 1,
+            "spearman_rank_correlation_mean": 0.978086956521739,
+            "top5_jaccard_mean": 0.8587301587301587
+          },
+          {
+            "repetition": 2,
+            "spearman_rank_correlation_mean": 0.9836811594202897,
+            "top5_jaccard_mean": 0.8777777777777779
+          },
+          {
+            "repetition": 3,
+            "spearman_rank_correlation_mean": 0.9814492753623189,
+            "top5_jaccard_mean": 0.8587301587301588
+          },
+          {
+            "repetition": 4,
+            "spearman_rank_correlation_mean": 0.9840289855072463,
+            "top5_jaccard_mean": 0.8666666666666668
+          },
+          {
+            "repetition": 5,
+            "spearman_rank_correlation_mean": 0.9858840579710146,
+            "top5_jaccard_mean": 0.8555555555555556
+          },
+          {
+            "repetition": 6,
+            "spearman_rank_correlation_mean": 0.9857971014492752,
+            "top5_jaccard_mean": 0.8555555555555556
+          },
+          {
+            "repetition": 7,
+            "spearman_rank_correlation_mean": 0.9860869565217388,
+            "top5_jaccard_mean": 0.9333333333333333
+          },
+          {
+            "repetition": 8,
+            "spearman_rank_correlation_mean": 0.9874492753623186,
+            "top5_jaccard_mean": 0.9333333333333335
+          },
+          {
+            "repetition": 9,
+            "spearman_rank_correlation_mean": 0.9840869565217389,
+            "top5_jaccard_mean": 0.8777777777777779
+          }
+        ]
+      }
+    }
+  },
+  "shap_permutation_agreement": {
+    "permutation_importance_metric": "ROC-AUC",
+    "permutation_repeats": 10,
+    "shap_global_importance": "mean absolute source-feature SHAP aggregated over the full held-out test partition",
+    "spearman_rank_correlation": 0.8755442828570985,
+    "features": [
+      {
+        "feature": "sg",
+        "mean_absolute_shap": 1.4479534951362243,
+        "permutation_roc_auc_importance_mean": 0.017600000000000015,
+        "permutation_roc_auc_importance_std": 0.006067765468257463,
+        "shap_rank": 1.0,
+        "permutation_rank": 1.0
+      },
+      {
+        "feature": "hemo",
+        "mean_absolute_shap": 1.2853466577162949,
+        "permutation_roc_auc_importance_mean": 0.016600000000000014,
+        "permutation_roc_auc_importance_std": 0.009420780812178524,
+        "shap_rank": 2.0,
+        "permutation_rank": 2.0
+      },
+      {
+        "feature": "pcv",
+        "mean_absolute_shap": 1.1128913026498408,
+        "permutation_roc_auc_importance_mean": 0.007000000000000039,
+        "permutation_roc_auc_importance_std": 0.005285199460127611,
+        "shap_rank": 3.0,
+        "permutation_rank": 4.0
+      },
+      {
+        "feature": "dm",
+        "mean_absolute_shap": 0.83209474187627,
+        "permutation_roc_auc_importance_mean": 0.002866666666666706,
+        "permutation_roc_auc_importance_std": 0.0025307003861469684,
+        "shap_rank": 4.0,
+        "permutation_rank": 7.0
+      },
+      {
+        "feature": "bgr",
+        "mean_absolute_shap": 0.8124000226298944,
+        "permutation_roc_auc_importance_mean": 0.0055333333333333345,
+        "permutation_roc_auc_importance_std": 0.0028604583937233605,
+        "shap_rank": 5.0,
+        "permutation_rank": 5.0
+      },
+      {
+        "feature": "htn",
+        "mean_absolute_shap": 0.7577250614289108,
+        "permutation_roc_auc_importance_mean": 0.0027333333333333654,
+        "permutation_roc_auc_importance_std": 0.002803965445975071,
+        "shap_rank": 6.0,
+        "permutation_rank": 8.0
+      },
+      {
+        "feature": "al",
+        "mean_absolute_shap": 0.7115189699370966,
+        "permutation_roc_auc_importance_mean": 0.005266666666666686,
+        "permutation_roc_auc_importance_std": 0.0017243356208503722,
+        "shap_rank": 7.0,
+        "permutation_rank": 6.0
+      },
+      {
+        "feature": "rbcc",
+        "mean_absolute_shap": 0.5388191905354759,
+        "permutation_roc_auc_importance_mean": 0.002133333333333354,
+        "permutation_roc_auc_importance_std": 0.003081125335544366,
+        "shap_rank": 8.0,
+        "permutation_rank": 11.0
+      },
+      {
+        "feature": "appet",
+        "mean_absolute_shap": 0.4744670862511352,
+        "permutation_roc_auc_importance_mean": 0.0016666666666666718,
+        "permutation_roc_auc_importance_std": 0.0014375905768565307,
+        "shap_rank": 9.0,
+        "permutation_rank": 12.0
+      },
+      {
+        "feature": "sc",
+        "mean_absolute_shap": 0.42429939229752245,
+        "permutation_roc_auc_importance_mean": 0.0024000000000000132,
+        "permutation_roc_auc_importance_std": 0.001611072796479278,
+        "shap_rank": 10.0,
+        "permutation_rank": 10.0
+      },
+      {
+        "feature": "bp",
+        "mean_absolute_shap": 0.31074464943149965,
+        "permutation_roc_auc_importance_mean": 4.4408920985006264e-17,
+        "permutation_roc_auc_importance_std": 0.0008432740427115452,
+        "shap_rank": 11.0,
+        "permutation_rank": 20.0
+      },
+      {
+        "feature": "pot",
+        "mean_absolute_shap": 0.24770929499430486,
+        "permutation_roc_auc_importance_mean": 0.00966666666666669,
+        "permutation_roc_auc_importance_std": 0.008865664103720618,
+        "shap_rank": 12.0,
+        "permutation_rank": 3.0
+      },
+      {
+        "feature": "bu",
+        "mean_absolute_shap": 0.24693285564593714,
+        "permutation_roc_auc_importance_mean": 0.0009333333333333305,
+        "permutation_roc_auc_importance_std": 0.0009977753031397071,
+        "shap_rank": 13.0,
+        "permutation_rank": 14.0
+      },
+      {
+        "feature": "pe",
+        "mean_absolute_shap": 0.21036003238401815,
+        "permutation_roc_auc_importance_mean": 0.0007333333333333414,
+        "permutation_roc_auc_importance_std": 0.0009637888196533848,
+        "shap_rank": 14.0,
+        "permutation_rank": 15.0
+      },
+      {
+        "feature": "su",
+        "mean_absolute_shap": 0.19886244568953257,
+        "permutation_roc_auc_importance_mean": 0.0004666666666666708,
+        "permutation_roc_auc_importance_std": 0.0006699917080747019,
+        "shap_rank": 15.0,
+        "permutation_rank": 17.0
+      },
+      {
+        "feature": "sod",
+        "mean_absolute_shap": 0.18069141587658882,
+        "permutation_roc_auc_importance_mean": 0.0010666666666666936,
+        "permutation_roc_auc_importance_std": 0.0013399834161494657,
+        "shap_rank": 16.0,
+        "permutation_rank": 13.0
+      },
+      {
+        "feature": "age",
+        "mean_absolute_shap": 0.17642440662154887,
+        "permutation_roc_auc_importance_mean": 0.002466666666666706,
+        "permutation_roc_auc_importance_std": 0.0009451631252505539,
+        "shap_rank": 17.0,
+        "permutation_rank": 9.0
+      },
+      {
+        "feature": "pc",
+        "mean_absolute_shap": 0.11887347066670455,
+        "permutation_roc_auc_importance_mean": 0.00033333333333335213,
+        "permutation_roc_auc_importance_std": 0.000537483849886559,
+        "shap_rank": 18.0,
+        "permutation_rank": 18.0
+      },
+      {
+        "feature": "rbc",
+        "mean_absolute_shap": 0.11791398941803641,
+        "permutation_roc_auc_importance_mean": 0.000666666666666671,
+        "permutation_roc_auc_importance_std": 0.0006666666666666599,
+        "shap_rank": 19.0,
+        "permutation_rank": 16.0
+      },
+      {
+        "feature": "ane",
+        "mean_absolute_shap": 0.0730222035258317,
+        "permutation_roc_auc_importance_mean": 6.666666666668152e-05,
+        "permutation_roc_auc_importance_std": 0.0003590109871422978,
+        "shap_rank": 20.0,
+        "permutation_rank": 19.0
+      },
+      {
+        "feature": "pcc",
+        "mean_absolute_shap": 0.02519562680393783,
+        "permutation_roc_auc_importance_mean": 1.1102230246251566e-17,
+        "permutation_roc_auc_importance_std": 0.000298142396999964,
+        "shap_rank": 21.0,
+        "permutation_rank": 21.0
+      },
+      {
+        "feature": "ba",
+        "mean_absolute_shap": 0.00738994078764319,
+        "permutation_roc_auc_importance_mean": 0.0,
+        "permutation_roc_auc_importance_std": 0.0,
+        "shap_rank": 22.0,
+        "permutation_rank": 23.0
+      },
+      {
+        "feature": "wbcc",
+        "mean_absolute_shap": 0.0032688172159765017,
+        "permutation_roc_auc_importance_mean": 0.0,
+        "permutation_roc_auc_importance_std": 0.0,
+        "shap_rank": 23.0,
+        "permutation_rank": 23.0
+      },
+      {
+        "feature": "cad",
+        "mean_absolute_shap": 0.0007318498090894109,
+        "permutation_roc_auc_importance_mean": 0.0,
+        "permutation_roc_auc_importance_std": 0.0,
+        "shap_rank": 24.0,
+        "permutation_rank": 23.0
+      }
+    ]
+  },
+  "artifacts": {
+    "perturbation_stability_csv": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\kidney\\reliability\\perturbation_stability.csv",
+    "shap_permutation_importance_csv": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\kidney\\reliability\\shap_permutation_importance.csv",
+    "stability_plot": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\kidney\\reliability\\stability_by_magnitude.png"
+  },
+  "interpretation_limitations": "These metrics describe explanation stability and agreement under the specified perturbation and permutation procedures. They do not prove clinical correctness, fairness, causality, or medical reliability."
+}

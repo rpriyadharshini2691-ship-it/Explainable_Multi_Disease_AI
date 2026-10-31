@@ -1,0 +1,399 @@
+{
+  "dataset": "diabetes",
+  "trained_at_utc": "2026-10-31T07:06:41.673023+00:00",
+  "seed": 42,
+  "training_samples": 200,
+  "test_samples_reserved": 51,
+  "feature_count_before_encoding": 16,
+  "training_class_distribution": {
+    "0": 62,
+    "1": 138
+  },
+  "test_class_distribution_reserved": {
+    "0": 16,
+    "1": 35
+  },
+  "cleaning_report": {
+    "source_path": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\datasets\\diabetes.csv",
+    "source_shape": [
+      520,
+      17
+    ],
+    "cleaned_shape": [
+      251,
+      17
+    ],
+    "target_column": "target",
+    "target_labels": {
+      "1": 173,
+      "0": 78
+    },
+    "duplicate_rows_removed": 269,
+    "missing_target_rows_removed": 0,
+    "feature_missing_value_counts": {
+      "age": 0,
+      "gender": 0,
+      "polyuria": 0,
+      "polydipsia": 0,
+      "sudden_weight_loss": 0,
+      "weakness": 0,
+      "polyphagia": 0,
+      "genital_thrush": 0,
+      "visual_blurring": 0,
+      "itching": 0,
+      "irritability": 0,
+      "delayed_healing": 0,
+      "partial_paresis": 0,
+      "muscle_stiffness": 0,
+      "alopecia": 0,
+      "obesity": 0
+    }
+  },
+  "cross_validation": {
+    "folds": 5,
+    "stratified": true,
+    "shuffle": true,
+    "seed": 42,
+    "preprocessing_refit_inside_each_fold": true
+  },
+  "software_versions": {
+    "scikit_learn": "1.9.1",
+    "xgboost": "3.4.1"
+  },
+  "models": {
+    "logistic_regression": {
+      "saved_model": "models\\diabetes\\logistic_regression.joblib",
+      "model_parameters": {
+        "C": 1.0,
+        "max_iter": 2000,
+        "n_jobs": null,
+        "random_state": 42,
+        "solver": "lbfgs"
+      },
+      "classes": [
+        0,
+        1
+      ],
+      "cross_validation": {
+        "folds": 5,
+        "strategy": "StratifiedKFold(shuffle=True)",
+        "scoring_partition": "training split only",
+        "metrics": {
+          "accuracy": {
+            "mean": 0.885,
+            "std": 0.028504385627478476,
+            "fold_scores": [
+              0.875,
+              0.85,
+              0.9,
+              0.925,
+              0.875
+            ]
+          },
+          "precision": {
+            "mean": 0.9275242821694434,
+            "std": 0.03186093979793881,
+            "fold_scores": [
+              0.8928571428571429,
+              0.92,
+              0.9615384615384616,
+              0.9032258064516129,
+              0.96
+            ]
+          },
+          "recall_sensitivity": {
+            "mean": 0.9055555555555556,
+            "std": 0.06067089895410962,
+            "fold_scores": [
+              0.9259259259259259,
+              0.8518518518518519,
+              0.8928571428571429,
+              1.0,
+              0.8571428571428571
+            ]
+          },
+          "specificity": {
+            "mean": 0.8397435897435898,
+            "std": 0.07890085657109722,
+            "fold_scores": [
+              0.7692307692307693,
+              0.8461538461538461,
+              0.9166666666666666,
+              0.75,
+              0.9166666666666666
+            ]
+          },
+          "f1": {
+            "mean": 0.9148890278727183,
+            "std": 0.024140635825997913,
+            "fold_scores": [
+              0.9090909090909091,
+              0.8846153846153846,
+              0.9259259259259259,
+              0.9491525423728814,
+              0.9056603773584906
+            ]
+          },
+          "roc_auc": {
+            "mean": 0.9686202686202685,
+            "std": 0.010767536555412717,
+            "fold_scores": [
+              0.9544159544159544,
+              0.9601139601139601,
+              0.9732142857142856,
+              0.9791666666666666,
+              0.9761904761904763
+            ]
+          },
+          "average_precision": {
+            "mean": 0.9857556634056058,
+            "std": 0.0056256565862188015,
+            "fold_scores": [
+              0.9785229703212648,
+              0.9808106043363416,
+              0.9895746699933892,
+              0.990327123308222,
+              0.9895429490688111
+            ]
+          },
+          "brier_score": {
+            "mean": 0.07048981555841204,
+            "std": 0.012468553378352018,
+            "fold_scores": [
+              0.08228205642613558,
+              0.07999110102704879,
+              0.06466448297024963,
+              0.05182500703141244,
+              0.07368643033721371
+            ]
+          }
+        }
+      }
+    },
+    "random_forest": {
+      "saved_model": "models\\diabetes\\random_forest.joblib",
+      "model_parameters": {
+        "max_depth": null,
+        "min_samples_leaf": 2,
+        "n_estimators": 300,
+        "n_jobs": 1,
+        "random_state": 42
+      },
+      "classes": [
+        0,
+        1
+      ],
+      "cross_validation": {
+        "folds": 5,
+        "strategy": "StratifiedKFold(shuffle=True)",
+        "scoring_partition": "training split only",
+        "metrics": {
+          "accuracy": {
+            "mean": 0.925,
+            "std": 0.03535533905932735,
+            "fold_scores": [
+              0.9,
+              0.95,
+              0.95,
+              0.95,
+              0.875
+            ]
+          },
+          "precision": {
+            "mean": 0.9508341543513957,
+            "std": 0.038519795351380365,
+            "fold_scores": [
+              0.896551724137931,
+              1.0,
+              0.9642857142857143,
+              0.9333333333333333,
+              0.96
+            ]
+          },
+          "recall_sensitivity": {
+            "mean": 0.942063492063492,
+            "std": 0.05421989780610249,
+            "fold_scores": [
+              0.9629629629629629,
+              0.9259259259259259,
+              0.9642857142857143,
+              1.0,
+              0.8571428571428571
+            ]
+          },
+          "specificity": {
+            "mean": 0.8871794871794872,
+            "std": 0.08842901669004305,
+            "fold_scores": [
+              0.7692307692307693,
+              1.0,
+              0.9166666666666666,
+              0.8333333333333334,
+              0.9166666666666666
+            ]
+          },
+          "f1": {
+            "mean": 0.9451146446266812,
+            "std": 0.026850767359584724,
+            "fold_scores": [
+              0.9285714285714286,
+              0.9615384615384616,
+              0.9642857142857143,
+              0.9655172413793104,
+              0.9056603773584906
+            ]
+          },
+          "roc_auc": {
+            "mean": 0.9748626373626372,
+            "std": 0.016474567739534915,
+            "fold_scores": [
+              0.9544159544159544,
+              0.9943019943019943,
+              0.9821428571428572,
+              0.9613095238095238,
+              0.9821428571428572
+            ]
+          },
+          "average_precision": {
+            "mean": 0.9883025798865743,
+            "std": 0.008367713384110693,
+            "fold_scores": [
+              0.9771107468728369,
+              0.9974457215836526,
+              0.992571890901384,
+              0.9821659517849815,
+              0.9922185882900169
+            ]
+          },
+          "brier_score": {
+            "mean": 0.06728291324538065,
+            "std": 0.008702692761533163,
+            "fold_scores": [
+              0.08132449772463232,
+              0.06210863544470997,
+              0.058399472895922025,
+              0.06750610466104501,
+              0.06707585550059394
+            ]
+          }
+        }
+      }
+    },
+    "xgboost": {
+      "saved_model": "models\\diabetes\\xgboost.joblib",
+      "model_parameters": {
+        "objective": "binary:logistic",
+        "colsample_bytree": 0.9,
+        "eval_metric": "logloss",
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "n_estimators": 200,
+        "n_jobs": 1,
+        "random_state": 42,
+        "reg_lambda": 1.0,
+        "subsample": 0.9,
+        "tree_method": "hist"
+      },
+      "classes": [
+        0,
+        1
+      ],
+      "cross_validation": {
+        "folds": 5,
+        "strategy": "StratifiedKFold(shuffle=True)",
+        "scoring_partition": "training split only",
+        "metrics": {
+          "accuracy": {
+            "mean": 0.925,
+            "std": 0.017677669529663664,
+            "fold_scores": [
+              0.925,
+              0.925,
+              0.95,
+              0.925,
+              0.9
+            ]
+          },
+          "precision": {
+            "mean": 0.9428003031451307,
+            "std": 0.01841261622155701,
+            "fold_scores": [
+              0.9285714285714286,
+              0.9285714285714286,
+              0.9642857142857143,
+              0.9310344827586207,
+              0.9615384615384616
+            ]
+          },
+          "recall_sensitivity": {
+            "mean": 0.9494708994708996,
+            "std": 0.03165496196674354,
+            "fold_scores": [
+              0.9629629629629629,
+              0.9629629629629629,
+              0.9642857142857143,
+              0.9642857142857143,
+              0.8928571428571429
+            ]
+          },
+          "specificity": {
+            "mean": 0.8717948717948719,
+            "std": 0.041295188226683065,
+            "fold_scores": [
+              0.8461538461538461,
+              0.8461538461538461,
+              0.9166666666666666,
+              0.8333333333333334,
+              0.9166666666666666
+            ]
+          },
+          "f1": {
+            "mean": 0.9456978304346725,
+            "std": 0.0135954669112423,
+            "fold_scores": [
+              0.9454545454545454,
+              0.9454545454545454,
+              0.9642857142857143,
+              0.9473684210526315,
+              0.9259259259259259
+            ]
+          },
+          "roc_auc": {
+            "mean": 0.9749643874643874,
+            "std": 0.007913981695024398,
+            "fold_scores": [
+              0.9629629629629629,
+              0.9743589743589743,
+              0.9851190476190476,
+              0.9761904761904762,
+              0.9761904761904763
+            ]
+          },
+          "average_precision": {
+            "mean": 0.9889014874191308,
+            "std": 0.004248058415964674,
+            "fold_scores": [
+              0.9823875822990155,
+              0.9886614774114775,
+              0.9942602040816325,
+              0.9896552242347173,
+              0.9895429490688111
+            ]
+          },
+          "brier_score": {
+            "mean": 0.05938618928194046,
+            "std": 0.012335936667831214,
+            "fold_scores": [
+              0.06114780902862549,
+              0.05853783339262009,
+              0.04406062513589859,
+              0.05505656450986862,
+              0.07812811434268951
+            ]
+          }
+        }
+      }
+    }
+  },
+  "test_evaluation": "Not yet evaluated"
+}

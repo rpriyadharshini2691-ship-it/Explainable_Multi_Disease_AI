@@ -1,0 +1,313 @@
+{
+  "disease": "kidney",
+  "evaluated_at_utc": "2026-10-31T07:33:58.031469+00:00",
+  "test_partition": {
+    "rows": 80,
+    "selection_used_test_data": false,
+    "threshold_selection_partition": "training split only, using stratified OOF predictions",
+    "split_seed": 42
+  },
+  "threshold_selection": {
+    "method": "Youden J on training-only out-of-fold probabilities; ties choose the threshold closest to 0.5",
+    "note": "Thresholds were fixed before test predictions were evaluated. For the weighted ensemble, OOF weights and threshold were both derived from training data; the held-out set remains the final generalization check.",
+    "models": {
+      "logistic_regression": {
+        "threshold": 0.5367076370466766,
+        "method": "maximize Youden J = sensitivity + specificity - 1",
+        "training_validation_predictions": "StratifiedKFold out-of-fold predictions",
+        "training_oof_youden_j": 0.995
+      },
+      "random_forest": {
+        "threshold": 0.5731062600260728,
+        "method": "maximize Youden J = sensitivity + specificity - 1",
+        "training_validation_predictions": "StratifiedKFold out-of-fold predictions",
+        "training_oof_youden_j": 0.9733333333333333
+      },
+      "xgboost": {
+        "threshold": 0.37794479727745056,
+        "method": "maximize Youden J = sensitivity + specificity - 1",
+        "training_validation_predictions": "StratifiedKFold out-of-fold predictions",
+        "training_oof_youden_j": 0.9616666666666667
+      },
+      "weighted_soft_voting": {
+        "threshold": 0.6210607394109037,
+        "method": "maximize Youden J = sensitivity + specificity - 1",
+        "training_validation_predictions": "StratifiedKFold out-of-fold predictions",
+        "training_oof_youden_j": 0.985
+      }
+    }
+  },
+  "models": {
+    "logistic_regression": {
+      "threshold_selection": {
+        "threshold": 0.5367076370466766,
+        "method": "maximize Youden J = sensitivity + specificity - 1",
+        "training_validation_predictions": "StratifiedKFold out-of-fold predictions",
+        "training_oof_youden_j": 0.995
+      },
+      "test_metrics": {
+        "default_0_5": {
+          "threshold": 0.5,
+          "accuracy": 0.9875,
+          "precision": 1.0,
+          "sensitivity": 0.98,
+          "specificity": 1.0,
+          "false_negative_rate": 0.020000000000000018,
+          "f1": 0.98989898989899,
+          "roc_auc": 0.9986666666666667,
+          "average_precision": 0.9992307692307693,
+          "brier_score": 0.01899027400073588,
+          "confusion_matrix": [
+            [
+              30,
+              0
+            ],
+            [
+              1,
+              49
+            ]
+          ],
+          "counts": {
+            "true_negative": 30,
+            "false_positive": 0,
+            "false_negative": 1,
+            "true_positive": 49
+          }
+        },
+        "youden_threshold": {
+          "threshold": 0.5367076370466766,
+          "accuracy": 0.9875,
+          "precision": 1.0,
+          "sensitivity": 0.98,
+          "specificity": 1.0,
+          "false_negative_rate": 0.020000000000000018,
+          "f1": 0.98989898989899,
+          "roc_auc": 0.9986666666666667,
+          "average_precision": 0.9992307692307693,
+          "brier_score": 0.01899027400073588,
+          "confusion_matrix": [
+            [
+              30,
+              0
+            ],
+            [
+              1,
+              49
+            ]
+          ],
+          "counts": {
+            "true_negative": 30,
+            "false_positive": 0,
+            "false_negative": 1,
+            "true_positive": 49
+          }
+        }
+      }
+    },
+    "random_forest": {
+      "threshold_selection": {
+        "threshold": 0.5731062600260728,
+        "method": "maximize Youden J = sensitivity + specificity - 1",
+        "training_validation_predictions": "StratifiedKFold out-of-fold predictions",
+        "training_oof_youden_j": 0.9733333333333333
+      },
+      "test_metrics": {
+        "default_0_5": {
+          "threshold": 0.5,
+          "accuracy": 0.9875,
+          "precision": 1.0,
+          "sensitivity": 0.98,
+          "specificity": 1.0,
+          "false_negative_rate": 0.020000000000000018,
+          "f1": 0.98989898989899,
+          "roc_auc": 1.0,
+          "average_precision": 1.0,
+          "brier_score": 0.015902517526142673,
+          "confusion_matrix": [
+            [
+              30,
+              0
+            ],
+            [
+              1,
+              49
+            ]
+          ],
+          "counts": {
+            "true_negative": 30,
+            "false_positive": 0,
+            "false_negative": 1,
+            "true_positive": 49
+          }
+        },
+        "youden_threshold": {
+          "threshold": 0.5731062600260728,
+          "accuracy": 0.975,
+          "precision": 1.0,
+          "sensitivity": 0.96,
+          "specificity": 1.0,
+          "false_negative_rate": 0.040000000000000036,
+          "f1": 0.9795918367346939,
+          "roc_auc": 1.0,
+          "average_precision": 1.0,
+          "brier_score": 0.015902517526142673,
+          "confusion_matrix": [
+            [
+              30,
+              0
+            ],
+            [
+              2,
+              48
+            ]
+          ],
+          "counts": {
+            "true_negative": 30,
+            "false_positive": 0,
+            "false_negative": 2,
+            "true_positive": 48
+          }
+        }
+      }
+    },
+    "xgboost": {
+      "threshold_selection": {
+        "threshold": 0.37794479727745056,
+        "method": "maximize Youden J = sensitivity + specificity - 1",
+        "training_validation_predictions": "StratifiedKFold out-of-fold predictions",
+        "training_oof_youden_j": 0.9616666666666667
+      },
+      "test_metrics": {
+        "default_0_5": {
+          "threshold": 0.5,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "false_negative_rate": 0.0,
+          "f1": 1.0,
+          "roc_auc": 1.0,
+          "average_precision": 1.0,
+          "brier_score": 0.0034882703794118916,
+          "confusion_matrix": [
+            [
+              30,
+              0
+            ],
+            [
+              0,
+              50
+            ]
+          ],
+          "counts": {
+            "true_negative": 30,
+            "false_positive": 0,
+            "false_negative": 0,
+            "true_positive": 50
+          }
+        },
+        "youden_threshold": {
+          "threshold": 0.37794479727745056,
+          "accuracy": 1.0,
+          "precision": 1.0,
+          "sensitivity": 1.0,
+          "specificity": 1.0,
+          "false_negative_rate": 0.0,
+          "f1": 1.0,
+          "roc_auc": 1.0,
+          "average_precision": 1.0,
+          "brier_score": 0.0034882703794118916,
+          "confusion_matrix": [
+            [
+              30,
+              0
+            ],
+            [
+              0,
+              50
+            ]
+          ],
+          "counts": {
+            "true_negative": 30,
+            "false_positive": 0,
+            "false_negative": 0,
+            "true_positive": 50
+          }
+        }
+      }
+    },
+    "weighted_soft_voting": {
+      "threshold_selection": {
+        "threshold": 0.6210607394109037,
+        "method": "maximize Youden J = sensitivity + specificity - 1",
+        "training_validation_predictions": "StratifiedKFold out-of-fold predictions",
+        "training_oof_youden_j": 0.985
+      },
+      "test_metrics": {
+        "default_0_5": {
+          "threshold": 0.5,
+          "accuracy": 0.9875,
+          "precision": 1.0,
+          "sensitivity": 0.98,
+          "specificity": 1.0,
+          "false_negative_rate": 0.020000000000000018,
+          "f1": 0.98989898989899,
+          "roc_auc": 0.9993333333333333,
+          "average_precision": 0.9996078431372549,
+          "brier_score": 0.014280309870848298,
+          "confusion_matrix": [
+            [
+              30,
+              0
+            ],
+            [
+              1,
+              49
+            ]
+          ],
+          "counts": {
+            "true_negative": 30,
+            "false_positive": 0,
+            "false_negative": 1,
+            "true_positive": 49
+          }
+        },
+        "youden_threshold": {
+          "threshold": 0.6210607394109037,
+          "accuracy": 0.9875,
+          "precision": 1.0,
+          "sensitivity": 0.98,
+          "specificity": 1.0,
+          "false_negative_rate": 0.020000000000000018,
+          "f1": 0.98989898989899,
+          "roc_auc": 0.9993333333333333,
+          "average_precision": 0.9996078431372549,
+          "brier_score": 0.014280309870848298,
+          "confusion_matrix": [
+            [
+              30,
+              0
+            ],
+            [
+              1,
+              49
+            ]
+          ],
+          "counts": {
+            "true_negative": 30,
+            "false_positive": 0,
+            "false_negative": 1,
+            "true_positive": 49
+          }
+        }
+      }
+    }
+  },
+  "clinical_interpretation": "Predictions and scores are research outputs, not clinically validated risk estimates or diagnoses.",
+  "plots": {
+    "roc_curves": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\kidney\\figures\\test_roc_curves.png",
+    "precision_recall_curves": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\kidney\\figures\\test_precision_recall_curves.png",
+    "calibration_curves": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\kidney\\figures\\test_calibration_curves.png",
+    "confusion_matrices": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\kidney\\figures\\test_confusion_matrices.png"
+  }
+}

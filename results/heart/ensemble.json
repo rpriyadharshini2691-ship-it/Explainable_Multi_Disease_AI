@@ -1,0 +1,33 @@
+{
+  "disease": "heart",
+  "created_at_utc": "2026-10-31T07:13:07.753538+00:00",
+  "ensemble_type": "weighted soft voting",
+  "probability_formula": "P(y=1|x) = sum_i(weight_i * P_i(y=1|x))",
+  "positive_class": 1,
+  "base_models": [
+    "logistic_regression",
+    "random_forest",
+    "xgboost"
+  ],
+  "weights": {
+    "logistic_regression": 0.8237928707404649,
+    "random_forest": 0.17620712925953508,
+    "xgboost": 2.3996427373424036e-17
+  },
+  "weight_constraints": {
+    "non_negative": true,
+    "sum_to_one": 1.0
+  },
+  "weight_selection": {
+    "method": "constrained Brier-score minimization on training OOF probabilities",
+    "cv_strategy": "StratifiedKFold(shuffle=True)",
+    "folds": 5,
+    "seed": 42,
+    "training_samples": 242,
+    "held_out_test_used": false,
+    "training_oof_brier_objective": 0.12040469550970093,
+    "objective_interpretation": "Optimization objective on the same OOF predictions used to choose weights; not an unbiased generalization estimate."
+  },
+  "saved_model": "models\\heart\\weighted_ensemble.joblib",
+  "held_out_test_evaluation": "Not yet evaluated"
+}

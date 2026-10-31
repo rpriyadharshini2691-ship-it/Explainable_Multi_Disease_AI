@@ -1,0 +1,284 @@
+{
+  "disease": "diabetes",
+  "generated_at_utc": "2026-10-31T07:27:15.297214+00:00",
+  "shap_version": "0.54.1",
+  "selected_model": "xgboost",
+  "selection_criterion": "highest mean 5-fold training CV ROC-AUC; ties use lower standard deviation",
+  "selection_cv_roc_auc": {
+    "mean": 0.9749643874643874,
+    "std": 0.007913981695024398
+  },
+  "model_output_space": "raw tree margin (log-odds)",
+  "positive_class_label": 1,
+  "explanation_population": "reserved test partition; explanations do not tune the model",
+  "explained_test_rows": 51,
+  "background_rows_from_training_partition": 50,
+  "transformed_feature_count": 31,
+  "transformed_to_source_feature_mapping": {
+    "numeric__age": "age",
+    "categorical__gender_Female": "gender",
+    "categorical__gender_Male": "gender",
+    "categorical__polyuria_No": "polyuria",
+    "categorical__polyuria_Yes": "polyuria",
+    "categorical__polydipsia_No": "polydipsia",
+    "categorical__polydipsia_Yes": "polydipsia",
+    "categorical__sudden_weight_loss_No": "sudden_weight_loss",
+    "categorical__sudden_weight_loss_Yes": "sudden_weight_loss",
+    "categorical__weakness_No": "weakness",
+    "categorical__weakness_Yes": "weakness",
+    "categorical__polyphagia_No": "polyphagia",
+    "categorical__polyphagia_Yes": "polyphagia",
+    "categorical__genital_thrush_No": "genital_thrush",
+    "categorical__genital_thrush_Yes": "genital_thrush",
+    "categorical__visual_blurring_No": "visual_blurring",
+    "categorical__visual_blurring_Yes": "visual_blurring",
+    "categorical__itching_No": "itching",
+    "categorical__itching_Yes": "itching",
+    "categorical__irritability_No": "irritability",
+    "categorical__irritability_Yes": "irritability",
+    "categorical__delayed_healing_No": "delayed_healing",
+    "categorical__delayed_healing_Yes": "delayed_healing",
+    "categorical__partial_paresis_No": "partial_paresis",
+    "categorical__partial_paresis_Yes": "partial_paresis",
+    "categorical__muscle_stiffness_No": "muscle_stiffness",
+    "categorical__muscle_stiffness_Yes": "muscle_stiffness",
+    "categorical__alopecia_No": "alopecia",
+    "categorical__alopecia_Yes": "alopecia",
+    "categorical__obesity_No": "obesity",
+    "categorical__obesity_Yes": "obesity"
+  },
+  "local_example": {
+    "cleaned_dataset_row_index": 168,
+    "base_value": 1.9001839605468773,
+    "model_output": -3.3408913612365723,
+    "base_plus_shap_sum": -3.340890679980491,
+    "absolute_additivity_error": 6.812560813251878e-07,
+    "raw_feature_values": {
+      "age": "28",
+      "gender": "Male",
+      "polyuria": "No",
+      "polydipsia": "No",
+      "sudden_weight_loss": "Yes",
+      "weakness": "No",
+      "polyphagia": "No",
+      "genital_thrush": "No",
+      "visual_blurring": "No",
+      "itching": "No",
+      "irritability": "No",
+      "delayed_healing": "No",
+      "partial_paresis": "No",
+      "muscle_stiffness": "No",
+      "alopecia": "No",
+      "obesity": "No"
+    },
+    "top_contributions": [
+      {
+        "transformed_feature": "categorical__polyuria_No",
+        "source_feature": "polyuria",
+        "original_feature_name": "polyuria",
+        "transformed_value": 1.0,
+        "shap_value": -1.7532928923517466,
+        "direction": "decreases model output",
+        "absolute_shap": 1.7532928923517466
+      },
+      {
+        "transformed_feature": "categorical__polydipsia_No",
+        "source_feature": "polydipsia",
+        "original_feature_name": "polydipsia",
+        "transformed_value": 1.0,
+        "shap_value": -0.922166105452925,
+        "direction": "decreases model output",
+        "absolute_shap": 0.922166105452925
+      },
+      {
+        "transformed_feature": "categorical__gender_Female",
+        "source_feature": "gender",
+        "original_feature_name": "gender",
+        "transformed_value": 0.0,
+        "shap_value": -0.6303784518921748,
+        "direction": "decreases model output",
+        "absolute_shap": 0.6303784518921748
+      },
+      {
+        "transformed_feature": "categorical__polyphagia_No",
+        "source_feature": "polyphagia",
+        "original_feature_name": "polyphagia",
+        "transformed_value": 1.0,
+        "shap_value": -0.48065853842999784,
+        "direction": "decreases model output",
+        "absolute_shap": 0.48065853842999784
+      },
+      {
+        "transformed_feature": "numeric__age",
+        "source_feature": "age",
+        "original_feature_name": "age",
+        "transformed_value": -1.6778550958098948,
+        "shap_value": -0.4514062509103678,
+        "direction": "decreases model output",
+        "absolute_shap": 0.4514062509103678
+      },
+      {
+        "transformed_feature": "categorical__irritability_No",
+        "source_feature": "irritability",
+        "original_feature_name": "irritability",
+        "transformed_value": 1.0,
+        "shap_value": -0.40655142460949717,
+        "direction": "decreases model output",
+        "absolute_shap": 0.40655142460949717
+      },
+      {
+        "transformed_feature": "categorical__visual_blurring_No",
+        "source_feature": "visual_blurring",
+        "original_feature_name": "visual_blurring",
+        "transformed_value": 1.0,
+        "shap_value": -0.33097269616555425,
+        "direction": "decreases model output",
+        "absolute_shap": 0.33097269616555425
+      },
+      {
+        "transformed_feature": "categorical__sudden_weight_loss_No",
+        "source_feature": "sudden_weight_loss",
+        "original_feature_name": "sudden_weight_loss",
+        "transformed_value": 0.0,
+        "shap_value": 0.3226204167259857,
+        "direction": "increases model output",
+        "absolute_shap": 0.3226204167259857
+      },
+      {
+        "transformed_feature": "categorical__genital_thrush_No",
+        "source_feature": "genital_thrush",
+        "original_feature_name": "genital_thrush",
+        "transformed_value": 1.0,
+        "shap_value": -0.27139320912770926,
+        "direction": "decreases model output",
+        "absolute_shap": 0.27139320912770926
+      },
+      {
+        "transformed_feature": "categorical__polyuria_Yes",
+        "source_feature": "polyuria",
+        "original_feature_name": "polyuria",
+        "transformed_value": 0.0,
+        "shap_value": -0.2410361347347498,
+        "direction": "decreases model output",
+        "absolute_shap": 0.2410361347347498
+      },
+      {
+        "transformed_feature": "categorical__itching_No",
+        "source_feature": "itching",
+        "original_feature_name": "itching",
+        "transformed_value": 1.0,
+        "shap_value": 0.2015241004549898,
+        "direction": "increases model output",
+        "absolute_shap": 0.2015241004549898
+      },
+      {
+        "transformed_feature": "categorical__partial_paresis_No",
+        "source_feature": "partial_paresis",
+        "original_feature_name": "partial_paresis",
+        "transformed_value": 1.0,
+        "shap_value": -0.13258706585504115,
+        "direction": "decreases model output",
+        "absolute_shap": 0.13258706585504115
+      },
+      {
+        "transformed_feature": "categorical__gender_Male",
+        "source_feature": "gender",
+        "original_feature_name": "gender",
+        "transformed_value": 1.0,
+        "shap_value": -0.07394588048569858,
+        "direction": "decreases model output",
+        "absolute_shap": 0.07394588048569858
+      },
+      {
+        "transformed_feature": "categorical__visual_blurring_Yes",
+        "source_feature": "visual_blurring",
+        "original_feature_name": "visual_blurring",
+        "transformed_value": 0.0,
+        "shap_value": -0.046788661181926726,
+        "direction": "decreases model output",
+        "absolute_shap": 0.046788661181926726
+      },
+      {
+        "transformed_feature": "categorical__sudden_weight_loss_Yes",
+        "source_feature": "sudden_weight_loss",
+        "original_feature_name": "sudden_weight_loss",
+        "transformed_value": 1.0,
+        "shap_value": 0.040734684951603414,
+        "direction": "increases model output",
+        "absolute_shap": 0.040734684951603414
+      }
+    ]
+  },
+  "global_importance": [
+    {
+      "feature": "polyuria",
+      "mean_absolute_shap": 1.5815379877989268
+    },
+    {
+      "feature": "polydipsia",
+      "mean_absolute_shap": 1.0931508447526608
+    },
+    {
+      "feature": "gender",
+      "mean_absolute_shap": 0.7925160043658553
+    },
+    {
+      "feature": "itching",
+      "mean_absolute_shap": 0.509186051642367
+    },
+    {
+      "feature": "polyphagia",
+      "mean_absolute_shap": 0.4442729432584133
+    },
+    {
+      "feature": "irritability",
+      "mean_absolute_shap": 0.39881404413766336
+    },
+    {
+      "feature": "sudden_weight_loss",
+      "mean_absolute_shap": 0.3338541867329246
+    },
+    {
+      "feature": "visual_blurring",
+      "mean_absolute_shap": 0.2953172128351734
+    },
+    {
+      "feature": "genital_thrush",
+      "mean_absolute_shap": 0.2880653533720247
+    },
+    {
+      "feature": "age",
+      "mean_absolute_shap": 0.28123608278156276
+    },
+    {
+      "feature": "alopecia",
+      "mean_absolute_shap": 0.2672732348595609
+    },
+    {
+      "feature": "partial_paresis",
+      "mean_absolute_shap": 0.11304676237908722
+    },
+    {
+      "feature": "delayed_healing",
+      "mean_absolute_shap": 0.10678364140123092
+    },
+    {
+      "feature": "muscle_stiffness",
+      "mean_absolute_shap": 0.08701075948729159
+    },
+    {
+      "feature": "obesity",
+      "mean_absolute_shap": 0.0788933737877318
+    },
+    {
+      "feature": "weakness",
+      "mean_absolute_shap": 0.05570135185211969
+    }
+  ],
+  "plots": {
+    "summary_beeswarm": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\diabetes\\shap\\shap_summary_beeswarm.png",
+    "global_importance": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\diabetes\\shap\\shap_global_importance.png",
+    "local_waterfall": "C:\\Drives\\Priya\\3rd_Sem_Project\\Explainable_Multi_Disease_AI\\results\\diabetes\\shap\\shap_local_waterfall.png"
+  },
+  "interpretation_limitations": "SHAP values describe this fitted model's behavior in the stated output space. They do not establish medical causation, clinical correctness, fairness, or clinical validity."
+}

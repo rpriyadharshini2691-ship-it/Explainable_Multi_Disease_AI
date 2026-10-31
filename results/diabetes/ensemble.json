@@ -1,0 +1,33 @@
+{
+  "disease": "diabetes",
+  "created_at_utc": "2026-10-31T07:12:50.148917+00:00",
+  "ensemble_type": "weighted soft voting",
+  "probability_formula": "P(y=1|x) = sum_i(weight_i * P_i(y=1|x))",
+  "positive_class": 1,
+  "base_models": [
+    "logistic_regression",
+    "random_forest",
+    "xgboost"
+  ],
+  "weights": {
+    "logistic_regression": 0.005709921447290548,
+    "random_forest": 0.1850313557786884,
+    "xgboost": 0.8092587227740211
+  },
+  "weight_constraints": {
+    "non_negative": true,
+    "sum_to_one": 1.0
+  },
+  "weight_selection": {
+    "method": "constrained Brier-score minimization on training OOF probabilities",
+    "cv_strategy": "StratifiedKFold(shuffle=True)",
+    "folds": 5,
+    "seed": 42,
+    "training_samples": 200,
+    "held_out_test_used": false,
+    "training_oof_brier_objective": 0.05893963440223552,
+    "objective_interpretation": "Optimization objective on the same OOF predictions used to choose weights; not an unbiased generalization estimate."
+  },
+  "saved_model": "models\\diabetes\\weighted_ensemble.joblib",
+  "held_out_test_evaluation": "Not yet evaluated"
+}

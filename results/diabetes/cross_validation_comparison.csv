@@ -1,0 +1,33 @@
+disease,model,metric,mean,std,status
+diabetes,logistic_regression,accuracy,0.885,0.028504385627478476,training-only stratified CV
+diabetes,logistic_regression,precision,0.9275242821694434,0.03186093979793881,training-only stratified CV
+diabetes,logistic_regression,recall_sensitivity,0.9055555555555556,0.06067089895410962,training-only stratified CV
+diabetes,logistic_regression,specificity,0.8397435897435898,0.07890085657109722,training-only stratified CV
+diabetes,logistic_regression,f1,0.9148890278727183,0.024140635825997913,training-only stratified CV
+diabetes,logistic_regression,roc_auc,0.9686202686202685,0.010767536555412717,training-only stratified CV
+diabetes,logistic_regression,average_precision,0.9857556634056058,0.0056256565862188015,training-only stratified CV
+diabetes,logistic_regression,brier_score,0.07048981555841204,0.012468553378352018,training-only stratified CV
+diabetes,random_forest,accuracy,0.925,0.03535533905932735,training-only stratified CV
+diabetes,random_forest,precision,0.9508341543513957,0.038519795351380365,training-only stratified CV
+diabetes,random_forest,recall_sensitivity,0.942063492063492,0.05421989780610249,training-only stratified CV
+diabetes,random_forest,specificity,0.8871794871794872,0.08842901669004305,training-only stratified CV
+diabetes,random_forest,f1,0.9451146446266812,0.026850767359584724,training-only stratified CV
+diabetes,random_forest,roc_auc,0.9748626373626372,0.016474567739534915,training-only stratified CV
+diabetes,random_forest,average_precision,0.9883025798865743,0.008367713384110693,training-only stratified CV
+diabetes,random_forest,brier_score,0.06728291324538065,0.008702692761533163,training-only stratified CV
+diabetes,xgboost,accuracy,0.925,0.017677669529663664,training-only stratified CV
+diabetes,xgboost,precision,0.9428003031451307,0.01841261622155701,training-only stratified CV
+diabetes,xgboost,recall_sensitivity,0.9494708994708996,0.03165496196674354,training-only stratified CV
+diabetes,xgboost,specificity,0.8717948717948719,0.041295188226683065,training-only stratified CV
+diabetes,xgboost,f1,0.9456978304346725,0.0135954669112423,training-only stratified CV
+diabetes,xgboost,roc_auc,0.9749643874643874,0.007913981695024398,training-only stratified CV
+diabetes,xgboost,average_precision,0.9889014874191308,0.004248058415964674,training-only stratified CV
+diabetes,xgboost,brier_score,0.05938618928194046,0.012335936667831214,training-only stratified CV
+diabetes,weighted_soft_voting,accuracy,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.
+diabetes,weighted_soft_voting,precision,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.
+diabetes,weighted_soft_voting,recall_sensitivity,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.
+diabetes,weighted_soft_voting,specificity,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.
+diabetes,weighted_soft_voting,f1,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.
+diabetes,weighted_soft_voting,roc_auc,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.
+diabetes,weighted_soft_voting,average_precision,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.
+diabetes,weighted_soft_voting,brier_score,,,Not yet evaluated; weight fitting used training-only OOF data. Final fair comparison is reserved for Phase 6.
